@@ -24,6 +24,7 @@ if (!isset($_SESSION['authenticated'])) {
     <div class="button-container">
       <a class="dashboard-button" href="https://github.com/mscbizurls/mscbizurls.github.io" target="_blank">Go to GitHub</a>
       <a class="dashboard-button" href="create_document.php">Create Document</a>
+      <a class="dashboard-button" href="chatbox.php">Chat Box</a>
     </div>
     <a href="logout.php">Logout</a>
   </div>
