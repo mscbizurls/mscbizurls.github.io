@@ -1,0 +1,63 @@
+/* Fun and Silly Styles */
+
+/* Background */
+body {
+  background-color: pink;
+}
+
+/* Heading */
+h1 {
+  font-family: 'Comic Sans MS', cursive;
+  color: green;
+  text-shadow: 2px 2px 4px #000000;
+}
+
+/* Links */
+a {
+  color: purple;
+  text-decoration: none;
+}
+
+a:hover {
+  color: yellow;
+  text-decoration: underline;
+}
+
+/* Button */
+.button {
+  background-color: orange;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 3px 3px 6px #888888;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: red;
+}
+
+/* Animations */
+@keyframes wiggle {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(5deg); }
+  50% { transform: rotate(-5deg); }
+  75% { transform: rotate(5deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.wiggly-text {
+  animation: wiggle 0.5s infinite;
+}
+
+.bouncing-button {
+  animation: bounce 0.3s infinite alternate;
+}
+
+@keyframes bounce {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-10px); }
+}
