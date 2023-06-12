@@ -3,11 +3,30 @@
 <head>
   <title>Coming Soon</title>
   <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
   <div class="container">
     <h1>Coming Soon</h1>
     <p>We have just bought this domain and are working on an exciting website. Stay tuned for updates!</p>
+    
+    <div id="netlify-identity-button"></div>
   </div>
+
+  <script>
+    if (typeof netlifyIdentity !== 'undefined') {
+      netlifyIdentity.on("init", user => {
+        if (!user) {
+          netlifyIdentity.on("login", () => {
+            document.location.href = "/dashboard.html"; // Replace with your desired redirect URL
+          });
+        }
+      });
+
+      netlifyIdentity.init();
+    } else {
+      console.log('Netlify Identity widget not found');
+    }
+  </script>
 </body>
 </html>
