@@ -1,22 +1,18 @@
 <?php
-// Check if the form is submitted
+// Process the form submission
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  // Retrieve the submitted username and password
   $username = $_POST["username"];
   $password = $_POST["password"];
 
-  // Perform basic authentication
+  // Validate the username and password
   // Replace this with your own authentication logic
-
-  // Example: check if the username is "mscbizfounder" and the password is "20091009"
   if ($username === "mscbizfounder" && $password === "20091009") {
-    // Successful login
-    // Redirect to the dashboard or desired page
+    // Authentication successful, redirect to the dashboard
     header("Location: dashboard.php");
     exit();
   } else {
-    // Invalid credentials
-    $errorMessage = "Invalid username or password";
+    // Authentication failed, display an error message
+    $errorMessage = "Invalid username or password.";
   }
 }
 ?>
@@ -24,12 +20,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Employee Login</title>
+  <title>Login</title>
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
   <div class="container">
-    <h2>Employee Login</h2>
+    <h2>Login</h2>
     <form action="login.php" method="post">
       <div class="form-group">
         <label for="username">Username:</label>
