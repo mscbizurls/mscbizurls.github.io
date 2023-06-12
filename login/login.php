@@ -5,16 +5,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $username = $_POST["username"];
   $password = $_POST["password"];
 
-  // Check if the username and password match the credentials
-  if ($username === "mscbizfounder" && $password === "2918") {
+  // Perform basic authentication
+  // Replace this with your own authentication logic
+
+  // Example: check if the username is "mscbizfounder" and the password is "20091009"
+  if ($username === "mscbizfounder" && $password === "20091009") {
     // Successful login
     // Redirect to the dashboard or desired page
     header("Location: dashboard.php");
     exit();
   } else {
     // Invalid credentials
-    header("Location: index.html");
-    exit();
+    $errorMessage = "Invalid username or password";
   }
 }
 ?>
@@ -40,6 +42,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       <div class="form-group">
         <input type="submit" value="Login">
       </div>
+      <?php if (isset($errorMessage)) { ?>
+        <p class="error"><?php echo $errorMessage; ?></p>
+      <?php } ?>
     </form>
   </div>
 </body>
